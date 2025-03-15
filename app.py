@@ -25,7 +25,7 @@ if menu == "Overall":
     st.write("This is an overview of the project.")
 
     # Display an image from images folder
-    overall_img_path = os.path.join(image_dir, "logo.png")
+    overall_img_path = os.path.join(image_dir, "overall.png")
     if os.path.exists(overall_img_path):
         st.image(overall_img_path, caption="Project Overview", use_column_width=True)
     else:
@@ -47,15 +47,7 @@ if menu == "Overall":
 # Introduction Section
 elif menu == "Introduction":
     st.title("Introduction")
-    st.write("Project background and objectives.")
-
-    # Upload an image (stored in images/)
-    uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
-    if uploaded_file:
-        with open(os.path.join(image_dir, uploaded_file.name), "wb") as f:
-            f.write(uploaded_file.getbuffer())
-        st.success("Image saved!")
-        st.image(uploaded_file, use_column_width=True)
+    st.write("How can we leverage data science to improve Adobo Bank's performance?")
 
 # Methodology Section
 elif menu == "Methodology":
